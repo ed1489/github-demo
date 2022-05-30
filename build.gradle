@@ -49,5 +49,3 @@ testing {
         }
     }
 }
-
-project.plugins.each {   println it}
