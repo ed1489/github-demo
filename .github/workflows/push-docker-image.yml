@@ -38,5 +38,5 @@ jobs:
           context: ./build/libs
           file: Dockerfile
           push: true
-          tags: tag
+          tags: ghcr.io/demo0.0.1-snapshot
           labels: label
