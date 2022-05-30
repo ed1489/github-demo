@@ -38,5 +38,5 @@ jobs:
           context: ./build/libs
           file: Dockerfile
           push: true
-          tags: ed1489/demo0.0.1snapshot
+          tags: ed1489/demo:first
           labels: label
