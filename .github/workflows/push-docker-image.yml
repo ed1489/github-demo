@@ -24,7 +24,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: koszek
-          password: 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
+          password: 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
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
