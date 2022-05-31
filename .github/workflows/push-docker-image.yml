@@ -38,5 +38,5 @@ jobs:
           context: ./build/libs
           file: Dockerfile
           push: true
-          tags: koszek/demo:first
-          labels: label
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
