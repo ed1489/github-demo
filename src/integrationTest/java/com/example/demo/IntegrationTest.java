@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class IntegrationTest {
 
-    private static GenericContainer simpleWebServer = new GenericContainer("demo:0.0.1-SNAPSHOT")
+    private static GenericContainer simpleWebServer = new GenericContainer("github-demo:0.0.1-SNAPSHOT")
             .withExposedPorts(8888);
 
     @Test
@@ -25,7 +25,7 @@ class IntegrationTest {
                 + simpleWebServer.getContainerIpAddress()
                 + ":" + simpleWebServer.getMappedPort(8888) + "/test";
         String response = simpleGetRequest(address);
-        assertEquals(response, "test");
+        assertEquals(response, "test new");
     }
 
     @After

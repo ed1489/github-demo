@@ -4,6 +4,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'com.palantir.docker' version '0.30.0'
     id 'com.palantir.docker-run' version '0.32.0'
+    id 'maven-publish'
 }
 
 group = 'com.example'
@@ -14,10 +15,33 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/ed1489/github-demo"
+            credentials {
+                username = 'ed1489'
+                password = "$System.env.PACKAGES_PASSWORD"
+            }
+        }
+    }
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.example'
+            artifactId = 'github-demo'
+            version = '0.0.1-SNAPSHOT'
+
+            from components.java
+        }
+    }
+}   
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.6'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.6'
     testImplementation 'org.testcontainers:testcontainers:1.16.3'
 }
 
@@ -27,8 +51,7 @@ tasks.named('test') {
 
 docker {
     name "${project.name}:${project.version}"
-    files 'build/libs/demo-0.0.1-SNAPSHOT.jar'
-//	tag 'DockerHub', "tkgregory/gradle-docker-example:${project.version}"
+    files 'build/libs/github-demo-0.0.1-SNAPSHOT.jar'
 }
 
 dockerRun {
@@ -49,5 +72,3 @@ testing {
         }
     }
 }
-
-project.plugins.each {   println it}
