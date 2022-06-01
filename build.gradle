@@ -22,7 +22,7 @@ publishing {
             url = "https://maven.pkg.github.com/ed1489/github-demo"
             credentials {
                 username = 'ed1489'
-                password = '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'
+                password = "$System.env.PACKAGES_PASSWORD"
             }
         }
     }
@@ -51,7 +51,7 @@ tasks.named('test') {
 
 docker {
     name "${project.name}:${project.version}"
-    files 'build/libs/demo-0.0.1-SNAPSHOT.jar'
+    files 'build/libs/github-demo-0.0.1-SNAPSHOT.jar'
 }
 
 dockerRun {
