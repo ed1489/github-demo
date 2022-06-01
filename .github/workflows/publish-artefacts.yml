@@ -1,6 +1,17 @@
-name: Create and publish a Docker image to Github packages
+name: Publish docker image and java artifacts to Github Packages
 
 on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: false
+        default: warning
+        type: choice
+        options:
+          - warning
+          - debug
+          - info
   push:
 #    branches: ['master']
 
