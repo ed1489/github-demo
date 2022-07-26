@@ -31,7 +31,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.example'
             artifactId = 'github-demo'
-            version = '0.0.2-SNAPSHOT'
+            version = '0.0.3-SNAPSHOT'
 
             from components.java
         }
