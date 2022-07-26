@@ -18,11 +18,11 @@ repositories {
 publishing {
     repositories {
         maven {
-            name = "GitHubPackages"
+            name = "GitHubPackages2"
             url = "https://maven.pkg.github.com/ed1489/github-demo"
             credentials {
-                username = 'ed1489'
-                password = "$System.env.PACKAGES_PASSWORD"
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
             }
         }
     }
@@ -31,7 +31,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.example'
             artifactId = 'github-demo'
-            version = '0.0.1-SNAPSHOT'
+            version = '0.0.2-SNAPSHOT'
 
             from components.java
         }
