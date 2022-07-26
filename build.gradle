@@ -7,8 +7,8 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.example1'
-version = '1.0.6-SNAPSHOT'
+group = 'com.example'
+version = '0.0.7-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
@@ -29,11 +29,6 @@ publishing {
 
     publications {
         maven(MavenPublication) {
-//            groupId = project.group
-//            artifactId = 'github-demo'
-//            version = '0.0.5-SNAPSHOT'
-//
-//            from components.java
         }
     }
 }   
