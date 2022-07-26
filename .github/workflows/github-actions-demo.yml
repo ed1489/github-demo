@@ -1,5 +1,6 @@
 name: Test branch in docker
-on: [ push ]
+on:
+  workflow_dispatch:
 jobs:
   test-in-docker:
     runs-on: ubuntu-latest
