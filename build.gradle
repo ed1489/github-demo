@@ -8,7 +8,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.6-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
@@ -27,15 +27,15 @@ publishing {
         }
     }
 
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.example'
-            artifactId = 'github-demo'
-            version = '0.0.5-SNAPSHOT'
-
-            from components.java
-        }
-    }
+//    publications {
+//        maven(MavenPublication) {
+//            groupId = project.group
+//            artifactId = 'github-demo'
+//            version = '0.0.5-SNAPSHOT'
+//
+//            from components.java
+//        }
+//    }
 }   
 
 dependencies {
